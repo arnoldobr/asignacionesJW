@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<head>
+<title>Asignaciones</title>
+<style>
+body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif
+}
+td{
+	padding: 3px;
+}
+.tabla{
+	border-collapse: collapse;
+	border: solid 1px #000;
+	width: 100%;
+}
+.tabla td{
+	border: none;
+}
+
+.treunion{
+	border-collapse: collapse;
+	width: 100%;
+}
+.treunion td{
+	border: solid 1px #000;
+}
+
+
+.reunion{
+	color:white;
+	text-transform: uppercase;
+	font-size: 1.2rem;
+	padding: 5px;
+}
+
+.w50{
+	width: 50%;
+}
+.w100{
+	width: 100%	;
+}
+
+table, .tesoros, .smm, .nvc,.rfs{
+	border-collapse: collapse;
+	border: 1px solid #000;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.tesoros{
+	background-color: #5a6a70;
+	text-transform: uppercase;
+	color: #fff;
+}
+.smm{
+	background-color: #c18626;
+	text-transform: uppercase;
+	color: #fff;
+}
+.nvc{
+	background-color: #961526;
+	text-transform: uppercase;
+	color: #fff;
+}
+.rfs{
+	background-color: #4795cc;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.tesoros td,
+.smm td,
+.nvc td,
+.rfs td{
+	border:solid 1px #000;
+}
+
+
+.l{
+	text-align: left;
+}
+.c{
+	text-align: center;
+}
+.r{
+	text-align: right;
+}
+
+.semana{
+  padding-top: 1em;
+  border: none;
+  text-transform: uppercase;
+}
+.noborder{
+	border:none;
+}
+h1{
+	text-align: center;
+	background-color: #eee;
+	color:grey;
+}
+</style>
+</head>
+<body>
+	<h1>Reunión de entre semana Octubre 2019 (Cong. La Puerta)</h1>
+
+	<div id="r1"></div>
+	<div id="r2"></div>
+	<div id="r3"></div>
+	<div id="r4"></div>
+	<div id="r5"></div>
+<script>
+
+var nreuniones = 4;
+
+var color = '#2d504c';
+
+var reuniones = [
+	'',
+	{//********************************** Semana 1
+		   f: '7-13 de Octubre',
+		lect: 'SANTIAGO 3-5',
+		canc: [50,53,125], // Cancion inicial, central y final
+		tes0: '“Mostremos la sabiduría de Dios”', // Tema Tesoros
+		tes1: 'Snt 3:1-18', // Lectura de la Biblia
+		pres: 'Ramón R.',
+		orac: ['Gilberto B.', 'Ramón R.'], // Oración inicial y final
+		teso: ['Ygnacio P.', 'Gilberto B.', 'Lisandro R.'],
+		 smm: [
+		    		[10, 'Seamos mejores lectores y maestros', 'Presidente'],
+						[ 5, 'Gilberto B.', 'D']
+					],
+		 nvc: [
+		  			[15, 'Necesidades de la Congregación', 'Arnoldo B.']
+					],
+		 ebc: ['Alexis R.', 'David R.'],
+		 rfs: ['', 'Ramón R.', '']
+	},
+	{//********************************** Semana 2
+		f   : '14-20 de Octubre',
+		lect: '1 PEDRO 1, 2',
+		pres: 'Alexis R.',
+		canc: [29,28,39],
+		orac: ['Ygnacio P.', 'Alexis R.'],
+		tes0: '“Tienen que ser santos”',
+		tes1: '1Pe 1:1-16',
+		teso: ['Gilberto B.', 'Ygnacio P.', 'Andrés R.'],
+		smm : [
+						[4, 'Video de la primera conversación', 'Presidente'],
+						[2, 'Gregoria de M. / Gladys de B.', 'PC1'],
+						[3, 'Silvia de P. / Irene de A.', 'PC2'],
+						[3, 'Doris de B. / Zonia B.', 'PC3']
+			  	],
+		nvc : [
+						[6, 'Hazte amigo de Jehová: Sé limpio y ordenado', 'Alexis R.'],
+						[ 9, '“Jehová ama a las personas limpias”', 'Ramón R.'],
+			  	],
+		ebc : ['Arnoldo B.', 'Arturo R.'],
+		rfs : ['', 'Ramón R.', '']
+
+	},
+	{//********************************** Semana 3
+		f   : '21-27 de Octubre',
+		lect: '1 PEDRO 3-5',
+		pres: 'Arnoldo B.',
+		canc: [14,137,61],
+		orac: ['Domingo R.', 'Arnoldo B.'],
+		tes0: '“El fin de todas las cosas se ha acercado”',
+		tes1: '1Pe 3:8-22',
+		teso: ['Ygnacio P.', 'Gilberto B.', 'Domingo R.'],
+		smm : [
+						[5, 'Video de la primera revisita', 'Presidente'],
+						[3, 'Raquel R. / Benilde G.', 'PR1'],
+						[5, 'Karenis R. / Yasmin V.', 'PR2']
+				  ],
+		nvc : [
+						[15, 'La conducta casta y el profundo respeto conquistan corazones', 'Alexis R.']
+				  ],
+		ebc : ['Ramón R.', 'Camilo F.'],
+		rfs : ['', 'Ramón R.', '']
+
+	},
+	{//********************************** Semana 4
+		f   : '28 de Octubre - 3 de Noviembre',
+		lect: '2 PEDRO 1-3',
+		pres: 'Ramón R.',
+		canc: [114,96,49],
+		orac: ['Marcos G.', 'Ramón R.'],
+		tes0: '“Estemos ‘muy pendientes de la presencia del día de Jehová’” ',
+		tes1: '2Pe 1:1-15',
+		teso: ['Gilberto B.', 'Ygnacio P.', 'Luis J.'],
+		smm : [
+						[5, 'Video de la segunda revisita', 'Presidente'],
+						[3, 'Daisy de R. / Carmen P.', '2R'],
+						[5, 'Yohalis V. / Marlene de B.', 'CB']
+			  	],
+		nvc : [
+						[ 15, '“¿Cuánto valoramos la Palabra de Dios?”', 'Arnoldo B.']
+				  ],
+		ebc : ['Alexis R.', 'Luis J.'],
+		rfs : ['', 'Ramón R.', '']
+
+	},
+	{//********************************** Semana 5
+		f   : '',
+		lect: '',
+		pres: '',
+		canc: [, , ],
+		orac: ['', ''],
+		tes0: '',
+		tes1: '',
+		teso: ['', '', ''],
+		smm : [
+				[, '', ''],
+				[, '', ''],
+				[, '', ''],
+				[, '', ''],
+			  ],
+		nvc : [
+				[, '', ''],
+				[, '', ''],
+			  ],
+		ebc : ['', ''],
+		rfs : ['', '', '']
+
+	}
+];
+
+
+
+for (i = 1; i <= nreuniones; i++){
+	let r = reuniones[i];
+	let midiv = document.getElementById("r" + i);
+	midiv.innerHTML = html_reunion(r,i,color);
+}
+
+
+function html_reunion(r,i,color){
+	let salidasmm = '';
+	for (var j = 0; j < r.smm.length; j+=1) {
+    salidasmm += `<tr>
+					<td class="r">${r.smm[j][0]}m.</td>
+					<td>${r.smm[j][1]}</td>
+					<td>${r.smm[j][2]}</td>
+				</tr>`;
+  }
+  let salidanvc='';
+	for (var k = 0; k < r.nvc.length; k+=1) {
+    salidanvc += `<tr>
+					<td class="r">${r.nvc[k][0]}m.</td>
+					<td>${r.nvc[k][1]}</td>
+					<td>${r.nvc[k][2]}</td>
+				</tr>
+`;
+  }
+
+
+	let s = `
+				<table class="w100 noborder">
+				<tr>
+					<th class="semana l" width="50%">SEMANA ${i}: ${r.f}</th>
+					<th class="semana r">Canción ${r.canc[0]}</th>
+				</tr>
+			</table>
+
+	<table class='tabla'>
+	<tr>
+		<th class="reunion l" style="background-color: ${color};">Presidente: ${r.pres}</th>
+		<th class="reunion" style="background-color: ${color};">${r.lect}</th>
+	</tr>
+	<tr>
+		<td class='w50' valign="top">
+			<table class="w100 treunion">
+				<tr>
+					<td></td>
+					<td>Oración</td>
+					<td>${r.orac[0]}</td>
+				</tr>
+				<tr>
+					<td class="r">3m.</td>
+					<td>Palabras de introducción</td>
+					<td>Presidente</td>
+				</tr>
+
+				<tr>
+					<th class="tesoros" colspan="3">Tesoros de la Biblia</th>
+				</tr>
+				<tr>
+					<td class="r">10m.</td>
+					<td>${r.tes0}</td>
+					<td>${r.teso[0]}</td>
+				</tr>
+				<tr>
+					<td class="r">8m.</td>
+					<td>Busquemos perlas escondidas</td>
+					<td>${r.teso[1]}</td>
+				</tr>
+
+				<tr>
+					<td class="r">4m.</td>
+					<td>Lectura de la Biblia (${r.tes1})</td>
+					<td>${r.teso[2]}</td>
+				</tr>
+				<tr>
+					<th colspan="3" class="smm">Seamos mejores maestros</th>
+				</tr>
+				${salidasmm}
+			</table>
+		</td>
+		<td class='w50' valign="top">
+			<table class="w100 treunion">
+				<tr>
+					<th class="nvc" colspan="3">Nuestra vida cristiana | Canción ${r.canc[1]}</th>
+				</tr>
+				${salidanvc}
+				<tr>
+					<td class="r">30m.</td>
+					<td>Estudio bíblico de la congregación</td>
+					<td>${r.ebc[0]}<br> L.: ${r.ebc[1]}</td>
+				</tr>
+				<tr>
+					<td class="r">3m.</td>
+					<td>Repaso de la reunión y adelanto de la próxima</td>
+					<td>Presidente</td>
+				</tr>
+				<tr>
+					<td colspan="2"><strong>Canción ${r.canc[2]}</strong> | Oración</td>
+					<td>${r.orac[1]}</td>
+				</tr>
+
+				<tr>
+					<th class="rfs" colspan="3">Reunión de Fin de semana</th>
+				</tr>
+				<tr>
+					<td class="r">30m.</td>
+					<td>Discurso Público</td>
+					<td>${r.rfs[0]}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Estudio de La Atalaya</td>
+					<td>${r.rfs[1]}</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>Lector ELA</td>
+					<td>${r.rfs[2]}</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+`;
+
+	return s;
+}
+
+</script>
+</body>
